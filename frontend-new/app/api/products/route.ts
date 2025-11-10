@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import mongoose from 'mongoose';
 
-// MongoDB connection
+
 const MONGO_URI = process.env.MONGO_URI || '';
 
 let isConnected = false;
@@ -29,7 +29,7 @@ const productSchema = new mongoose.Schema({
 
 const Product = mongoose.models.Product || mongoose.model('Product', productSchema);
 
-// GET all products
+
 export async function GET() {
   try {
     await connectDB();
@@ -44,7 +44,7 @@ export async function GET() {
   }
 }
 
-// POST create product
+
 export async function POST(request: NextRequest) {
   try {
     await connectDB();
